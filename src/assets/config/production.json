@@ -1,6 +1,0 @@
-{
-    "debugging": false,
-    "API_ENDPOINTS": {
-        "USER": "prod/api/v1/user"
-    }
-}

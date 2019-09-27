@@ -17,15 +17,17 @@ export class ConfigService {
                 this.env = 'production';
             }
             console.log(this.env);
-            this.http.get('./assets/config/' + this.env + '.json')
-                .subscribe((data) => {
-                    this.config = data;
-                    resolve(true);
+            this.http.get('./assets/config/config.json')
+                .subscribe((data: any) => {
+                    if (data.includes(this.env)) {
+                        this.config = data;
+                        resolve(true);
+                    }
                 },
-                (error: any) => {
-                    console.error(error);
-                    throwError(error.json().error || 'Server error');
-                });
+                    (error: any) => {
+                        console.error(error);
+                        throwError(error.json().error || 'Server error');
+                    });
         });
     }
     // Is app in the development mode?

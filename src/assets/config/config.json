@@ -1,0 +1,14 @@
+{
+    "development": {
+        "debugging": true,
+        "API_ENDPOINTS": {
+            "USER": "prod/api/v1/user"
+        }
+    },
+    "production": {
+        "debugging": false,
+        "API_ENDPOINTS": {
+            "USER": "prod/api/v1/user"
+        }
+    }
+}
